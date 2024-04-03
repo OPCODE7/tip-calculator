@@ -1,36 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Tip calculator app</title>
 
 </head>
+
 <body>
+  <header class="header">
+    <h1 class="header__title"><span>SPLI</span><span>TTER</span></h1>
+  </header>
 
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
- 
+  <main class="container">
+    <div class="container__options">
+      <div class="container__options__bill">
+        <label>Bill</label>
+        <span>$</span>
+        <input type="text" placeholder="0" id="bill">
+      </div>
+      <div class="container__options__tip">
+        <h5>Select Tip %</h5>
+        <button class="btn__tip">5%</button>
+        <button class="btn__tip">10%</button>
+        <button class="btn__tip">15%</button>
+        <button class="btn__tip">25%</button>
+        <button class="btn__tip">50%</button>
+        <button class="btn__tip">Custom</button>
+      </div>
+      <div class="container__options__people">
+        <label>Number of People</label>
+        <span>$</span>
+        <input type="text" placeholder="0" id="number-people">
+      </div>
+    </div>
+    <div class="container__results">
+      <div class="container__results__tipamount">
+        <span>Tip Amount</span>
+        <span>/ person</span>
+      </div>
+      <div class="container__results__totalamount">
+        <span>Total</span>
+        <span>/ person</span>
+      </div>
+      <button class="btn__reset">Reset</button>
+    </div>
+  </main>
 </body>
+
 </html>
