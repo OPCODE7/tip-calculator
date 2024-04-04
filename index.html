@@ -31,9 +31,12 @@
         <button class="btn__tip">15%</button>
         <button class="btn__tip">25%</button>
         <button class="btn__tip">50%</button>
-        <button class="btn__tip" id="custom-tip">Custom</button>
+        <input class="btn__tip custom" id="custom-tip" placeholder="Custom">
       </div>
-      <label>Number of People</label>
+      <div class="no-people__title">
+        <label>Number of People</label>
+        <span class="d-none">Can't be zero</span>
+      </div>
       <div class="container__options__people">
         <img src="images/icon-person.svg" alt="icon-person">
         <input type="text" placeholder="0" id="number-people">

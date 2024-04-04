@@ -15,6 +15,8 @@
     --light-grayish-cyan: hsl(185, 41%, 84%);
     --very-light-grayish-cyan: hsl(189, 41%, 97%);
     --white: hsl(0, 0%, 100%);
+    --hover-state: #9FE8DF;
+    --red: hsl(0, 100%, 50%);
 }
 
 
@@ -114,9 +116,10 @@ label {
     font-weight: bold;
 }
 
-#custom-tip {
+.custom {
     background-color: var(--very-light-grayish-cyan);
-    color: var(--grayish-cyan);
+    color: var(--dark-grayish-cyan);
+    padding-right: 1rem;
 }
 
 
@@ -166,4 +169,33 @@ label {
 .total__amount,.tip__amount{
     font-size: 2rem;
     color: var(--strong-cyan);
+}
+
+.border-red{
+    border: 2px solid var(--red);
+}
+
+.no-people__title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.no-people__title > span{
+    font-size: .9rem;
+    color: var(--red);
+}
+
+.d-none{
+    display: none;
+}
+
+input:hover{
+    border: 2px solid var(--hover-state);
+    color: var(--very-dark-cyan);
+}
+
+button:hover{
+    background-color: var(--hover-state);
+    color: var(--very-dark-cyan);
 }
