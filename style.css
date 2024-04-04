@@ -199,3 +199,21 @@ button:hover{
     background-color: var(--hover-state);
     color: var(--very-dark-cyan);
 }
+
+@media(min-width: 765px){
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 60%;
+        margin: 0 auto;
+        height: 70vh;
+    }
+
+    
+
+    .container__results,.container__options{
+        width: 45%;
+        height: 100%;
+    }
+}
