@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -19,34 +19,40 @@
 
   <main class="container">
     <div class="container__options">
+      <label>Bill</label>
       <div class="container__options__bill">
-        <label>Bill</label>
-        <span>$</span>
+        <img src="images/icon-dollar.svg" alt="icon-dollar">
         <input type="text" placeholder="0" id="bill">
       </div>
+      <label>Select Tip %</label>
       <div class="container__options__tip">
-        <h5>Select Tip %</h5>
         <button class="btn__tip">5%</button>
         <button class="btn__tip">10%</button>
         <button class="btn__tip">15%</button>
         <button class="btn__tip">25%</button>
         <button class="btn__tip">50%</button>
-        <button class="btn__tip">Custom</button>
+        <button class="btn__tip" id="custom-tip">Custom</button>
       </div>
+      <label>Number of People</label>
       <div class="container__options__people">
-        <label>Number of People</label>
-        <span>$</span>
+        <img src="images/icon-person.svg" alt="icon-person">
         <input type="text" placeholder="0" id="number-people">
       </div>
     </div>
     <div class="container__results">
       <div class="container__results__tipamount">
-        <span>Tip Amount</span>
-        <span>/ person</span>
+        <div>
+          <h5 class="container__results__tipamount__title">Tip Amount</h5>
+          <span>/ person</span>
+        </div>
+        <h4 class="tip__amount">4</h4>
       </div>
       <div class="container__results__totalamount">
-        <span>Total</span>
-        <span>/ person</span>
+        <div>
+          <h5 class="container__results__totalamount__totaltitle">Total</h5>
+          <span>/ person</span>
+        </div>
+        <h4 class="total__amount">4</h4>
       </div>
       <button class="btn__reset">Reset</button>
     </div>
