@@ -19,7 +19,10 @@
 
   <main class="container">
     <div class="container__options">
-      <label>Bill</label>
+      <div class="no-people__title">
+        <label>Bill</label>
+        <span class="d-none error__msg">Invalid format</span>
+      </div>
       <div class="container__options__bill">
         <img src="images/icon-dollar.svg" alt="icon-dollar">
         <input type="text" placeholder="0" id="bill">
@@ -31,11 +34,11 @@
         <button class="btn__tip">15%</button>
         <button class="btn__tip">25%</button>
         <button class="btn__tip">50%</button>
-        <input class="btn__tip custom" id="custom-tip" placeholder="Custom">
+        <input class="custom" id="custom-tip" placeholder="Custom">
       </div>
       <div class="no-people__title">
         <label>Number of People</label>
-        <span class="d-none">Can't be zero</span>
+        <span class="d-none">Invalid format</span>
       </div>
       <div class="container__options__people">
         <img src="images/icon-person.svg" alt="icon-person">
@@ -48,18 +51,82 @@
           <h5 class="container__results__tipamount__title">Tip Amount</h5>
           <span>/ person</span>
         </div>
-        <h4 class="tip__amount">4</h4>
+        <h4 class="tip__amount">$0.00</h4>
       </div>
       <div class="container__results__totalamount">
         <div>
           <h5 class="container__results__totalamount__totaltitle">Total</h5>
           <span>/ person</span>
         </div>
-        <h4 class="total__amount">4</h4>
+        <h4 class="total__amount">$0.00</h4>
       </div>
       <button class="btn__reset">Reset</button>
     </div>
   </main>
 </body>
+
+<script>
+  const d= document,
+  $bill= d.querySelector("#bill"),
+  $allBtnTip= d.querySelectorAll(".btn__tip"),
+  $personalizedTip= d.querySelector("#custom-tip");
+
+  function calculateTip(billAmount,tip,numberPeople){
+    let discount= tip/100;
+    let tipPerson= (billAmount*discount) / numberPeople;
+    let totalBillPerson= billAmount / numberPeople;
+
+    return [tipPerson,totalBillPerson];
+  }
+
+  function validateInput(input){
+    let isValid= /^(?!0)[0-9]*$/g.test(input.value);
+    if(isValid){
+      input.classList.add("is__valid__input");
+      input.classList.remove("no__valid__input");
+    }else{
+      input.classList.add("no__valid__input");
+      input.classList.remove("is__valid__input");
+    }
+
+    return isValid;
+  }
+
+
+  d.addEventListener("click", e => {
+    if(e.target.matches(".btn__tip")){
+      e.target.classList.add("active__tip");  
+      $personalizedTip.value= "";
+      $allBtnTip.forEach(btn => {
+        if(btn.classList.contains("active__tip") && btn!== e.target) btn.classList.remove("active__tip");
+      });
+    }
+  });
+
+  d.addEventListener("keyup" , e => {
+    if(e.target.matches("input[type= text]")){
+      if(validateInput(e.target)){
+        e.target.parentElement.previousElementSibling.children[1].classList.add("d-none");
+      }else{
+        e.target.parentElement.previousElementSibling.children[1].classList.remove("d-none");
+      }
+    }
+
+    if(e.target.matches("#custom-tip")){
+      if(validateInput(e.target)){
+
+      }
+    }
+
+
+
+  });
+
+  $personalizedTip.addEventListener("focus", e =>{
+    let activeTip= d.querySelector(".active__tip");
+    if(activeTip!==null) activeTip.classList.remove("active__tip");
+  });
+
+</script>
 
 </html>

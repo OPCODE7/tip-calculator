@@ -104,7 +104,7 @@ label {
     height: 25vh;
 }
 
-.btn__tip {
+.btn__tip ,.custom{
     background-color: var(--very-dark-cyan);
     color: var(--white);
     font-size: 16px;
@@ -175,6 +175,11 @@ label {
     border: 2px solid var(--red);
 }
 
+.active__tip{
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+}
+
 .no-people__title{
     display: flex;
     justify-content: space-between;
@@ -200,6 +205,15 @@ button:hover{
     color: var(--very-dark-cyan);
 }
 
+div > .is__valid__input{
+    border: 2px solid var(--hover-state);
+    color: var(--very-dark-cyan);
+}
+
+div > .no__valid__input{
+    border: 2px solid var(--red);
+}
+
 @media(min-width: 765px){
     .container{
         display: flex;
@@ -210,10 +224,15 @@ button:hover{
         height: 70vh;
     }
 
-    
-
     .container__results,.container__options{
         width: 45%;
         height: 100%;
     }
+
+    .container__options__tip{
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2,1fr);
+        height: 20vh;
+    }
+
 }
